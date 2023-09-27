@@ -1,0 +1,36 @@
+<h1 class="display-4 custom-title">Calculadora</h1>
+
+<div class="row">
+    <div class="col-6">
+        <label class="form-label" for="">Ingresa el Numero 1</label>
+        <input type="text" class="form-control" [(ngModel)]="num1" name="num1" >
+    </div>
+</div>
+<div class="col-6">
+        <label class="form-label" for="">Ingresa el Numero 2</label>
+        <input type="text" class="form-control" [(ngModel)]="num2" name="num2" >
+</div>
+<br>
+<div class="mb-3">
+    <button (click)="calcular()" class="btn btn-primary">Vamos a ello neni</button>
+</div>
+<div>
+    <!--suma--> <br>
+    <input type="radio" id="sum" [(ngModel)]="calculo" name="calculo" value="sum" />
+    <label for="suma">Suma</label>
+    <!--resta--> <br>
+    <input type="radio" id="res" [(ngModel)]="calculo" name="calculo" value="res" />
+    <label for="resta">Resta</label>
+    <!--multiplicacion--><br>
+    <input type="radio" id="multi" [(ngModel)]="calculo" name="calculo" value="multi" />
+    <label for="multi">Multiplicacion</label>
+    <!--divicion--> <br>
+    <input type="radio" id="div" [(ngModel)]="calculo" name="calculo" value="div" />
+    <label for="divide">Divicion</label>
+<!--Porcentaje--> <br>
+    <input type="radio" id="porce" [(ngModel)]="calculo" name="calculo" value="porce" />
+    <label for="divide">Porcentaje</label>
+</div>
+<div class="col-6">
+    <h2>Resultado es: {{resultado}}</h2>
+</div>
