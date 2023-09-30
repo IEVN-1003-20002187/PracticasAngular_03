@@ -1,0 +1,27 @@
+<section class="custom-section">
+
+
+<h1 class="display-4 custom-title">Suma de Números Impartida por la clase IEVN1003</h1>
+
+<div class="form-group">
+    <label for="num1" class="font-weight-bold">Ingresa un número:</label>
+    <input type="number" [(ngModel)]="num1" id="num1" name="num1" class="form-control custom-width">
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="num2">Número de veces a sumar:</label>
+    <input type="number" [(ngModel)]="num2" id="num2" name="num2" class="form-control custom-width">
+  </div>
+  <br>
+  <div >
+    <button (click)="calcular()" class="btn btn-lg btn-warning form-group">Calcular</button>
+  </div>
+  
+  
+  <div *ngIf="resultadoC !== ''" class="form-group">
+    <p>El resultado de: {{ resultadoC}}</p>
+
+    <p>Es el siguiente: {{ resultadoS}}</p>
+  </div>
+
+</section>

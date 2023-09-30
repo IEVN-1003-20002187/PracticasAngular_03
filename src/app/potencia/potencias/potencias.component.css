@@ -1,0 +1,26 @@
+.custom-title {
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    font-size: 4em; 
+    font-weight: bolder; 
+    color: purple; 
+  }
+.form-group{
+    color: black;
+    font-family: cursive;
+    font-size: 2em;
+}
+
+.font-weight-bold{
+    size: 2cm;
+
+}
+
+.custom-width {
+    width: 600px; /* Ajusta el ancho según sea necesario */
+    
+}
+.custom-section {
+    background-color: #4bc8be; /* Cambia el color según tus preferencias */
+    padding: 20px; /* Ajusta el espacio interior según sea necesario */
+  }
+  
