@@ -1,0 +1,166 @@
+.button-container {
+    display: flex;
+    justify-content: center; /* Espacio entre los botones */
+    gap: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+  }
+.mat-mdc-radio-button {
+  margin-left: 16px;
+  text-align: center;
+  color: white;
+  /* background-color: aliceblue; */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 25px;
+  
+  }
+
+input[type="radio"]{
+  position:absolute;
+  opacity: 0;
+  gap: 20px;
+}
+
+label {
+  display: inline-block;
+  padding: 10px 20px; /* Ajusta el padding según el tamaño que desees */
+  font-size: 16px; /* Ajusta el tamaño de la fuente según el tamaño que desees */
+  border: 2px solid #ccc; /* Establece un borde para los radio buttons */
+  border-radius: 10px; /* Ajusta el radio del borde según tus preferencias */
+  cursor: pointer;
+}input[type="radio"]:checked + label {
+  background-color: #b07eea; /* Cambia el color de fondo cuando está seleccionado */
+gap:20px;
+}
+
+/* Aumenta el tamaño de los radio buttons al hacer hover */
+label:hover {
+  transform: scale(1.1); /* Ajusta el factor de escala según tus preferencias */
+  gap: 20px;
+}
+
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    margin: 0.5 rem auto;
+    max-width: 500px;
+
+}
+.custom-card {
+  padding: 5px;
+  text-align: center; /* Para centrar el texto */ 
+  background-color: rgb(225, 226, 130);
+  padding: 5px;
+  position: relative;
+  background: url("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/cb50cf89229935.5dee9b370818e.gif") center;
+}
+.logo{
+  width: 50px; /* Ajusta el tamaño según sea necesario */
+  height: 50px; /* Ajusta el tamaño según sea necesario */
+  margin-right: 20px;
+}
+
+.custom-card-title {
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif; /* Aplicar cursiva */
+}
+/* Establecer imagen de fondo */
+.diseño{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+  text-align: center justify;
+  color: rgb(178, 105, 105);
+
+}
+
+body{
+  background: url("https://www.eluniversal.com.mx/resizer/LCc4rlBvCDz-JNUbrQ4jOeX4dAg=/1100x666/cloudfront-us-east-1.images.arcpublishing.com/eluniversal/RUAMZBXJGFCXJLNCBD3OSVS224.jpg") ;/* Reemplaza con la ruta de tu imagen */
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+
+.radio-button{
+  background-color: black;
+}
+.example-card{
+  max-width: 400px;
+  display: flex;
+}
+.example-header-image{
+/* background-image: url(""); */
+background-size: cover;
+}
+
+.example-card1{
+  max-width: 400px;
+display: flex;
+width: 100%;
+}
+.example-header-image1{
+/* background-image: url(""); */
+background-size: cover;
+
+}
+
+.conta{
+  margin-left: 120px;
+  margin-top: -450px;
+  max-width: 500px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+  
+}
+.cartelera{
+  margin-left: 1400px;
+  margin-top: -850px;
+  max-width: 3000px;
+  width: 80%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+ 
+
+}
+.compra{
+  color: brown;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 30px;
+
+}
+.example-card {
+  width: 80%; /* Ancho de la tarjeta */
+  margin: auto; /* Centra la tarjeta en la pantalla */
+  
+}
+
+.salidas{
+  text-align: center;
+  color: black;
+}
+
+.entra{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 25px;
+  color: white;
+  text-align: center;
+
+}
+.entra1{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 25px;
+  color: black;
+  text-align: center;
+
+}
+.mat-button-large{
+  font-size: 20px; /* Ajusta el tamaño según sea necesario */
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: beige;
+
+}
+

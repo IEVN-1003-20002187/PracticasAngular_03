@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body class="background-image">
+  <div>
+  <mat-card class=" custom-card">
+    <img class="logo" src="https://d10studio.com.mx/projects/Cinepolis/_img/CinepolisLoader.gif" alt="Cinepolis">
+    <div class="title-overlay">
+    <mat-card-title class="custom-card-title">  Binevenid@ </mat-card-title>>
+
+  </div>
+  </mat-card><br><br>
+
+    <form (ngSubmit)="limite()" >
+      <div class="container">
+        <mat-card-subtitle class="entra">Entradas</mat-card-subtitle>
+    <mat-form-field> 
+      <label for="name">Nombre del Usuario:</label>
+      <input  matInput type="text" id="name" [(ngModel)]="nombre" name="nombre" required placeholder="Ingresa tu nombre"><br><br>
+    </mat-form-field>
+
+    <mat-form-field> 
+      <label for="compradores">Número compradores :</label>
+      <input  matInput type="number" id="cantComp" [(ngModel)]="cantComp" name="cantComp"  required placeholder="Ingrese los compradores"><br><br>
+    </mat-form-field>
+
+    <mat-form-field> 
+      <label for="tickets">Número de Boletas :</label>
+      <input  matInput type="number" id="tickets"  [max]="cantComp * 7"   [(ngModel)]="numBol" name="numBol" required placeholder="Ingresa el numero de Boletas"><br><br>
+    </mat-form-field>
+    
+    </div>
+      <div class="mat-mdc-radio-button" >
+      <label>¿Tiene tarjeta "Cineco"?</label>
+      <div class=""> <br>
+      <input type="radio" id="radio" name="tarjetas" value="1" [(ngModel)]="tarjetas" class="">
+      <label for="radio">Si</label>
+      <input type="radio"  id="radio1" name="tarjetas" value="0" [(ngModel)]="tarjetas">
+      <label for="radio1">No</label>
+    </div>
+        <br><br>
+
+
+        <div class="salidas"> 
+          <mat-card class="container">
+          <mat-card-subtitle class="entra1">Salidas</mat-card-subtitle>
+          <div>
+              <h1  class="entra1">Subototal:</h1>
+              <p >${{Subtotal}}</p>
+          </div>
+          </mat-card>
+</div>
+    </div>
+    <br><br><br><br>
+
+      <div class="button-container">
+      <button class="mat-button-large" type="submit" mat-raised-button color="primary" (click)="calcular()" >Calcular Descuento</button>
+      
+      <button class="mat-button-large" (click)="salirYRecargar()" mat-raised-button color="primary">Salir</button>
+    </div>
+    </form>
+
+<!---Carteleras de cine 1-->
+<div class="conta">
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class=""example-header-image></div>
+    <mat-card-title> Estreno</mat-card-title>
+    <mat-card-subtitle>La Monja 2</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUSEhMVFRIWFxUVGBUVFRcXFhUWFRUXFxUYGBUYHyggGBolHRYWITEhJSkrLi4uFx8zODMtNygtLi0BCgoKDg0OGhAQFy0lIB8uLS0tLS0tLS0tLS0tLS0tLS0vLS0tLS0tLy0tLS0rLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAPsAyQMBIgACEQEDEQH/xAAbAAEAAwEBAQEAAAAAAAAAAAAAAQMEAgUGB//EADsQAAEDAgQDBQYFAwQDAQAAAAEAAhEDIQQSMUEiUWEFEzJxkUJSgaGx0RQjM8HwBuHxYnKCoiRTkhX/xAAXAQEBAQEAAAAAAAAAAAAAAAAAAQID/8QAJREBAQEAAwACAQIHAAAAAAAAAAERAiExQWFRA5ESIjKBseHw/9oADAMBAAIRAxEAPwD8NREQFKhW06gAILQZi/KDt5oK1ICvpVwHl2QEGeE6CfhsgrNEcA9v45hA/wDnUIKNF01quw7wGuBaCXRc6tjkuq1YXhgE5dPZyiDHnuorObLsUua2YZ7YHA08JB6kjXzCrFUNsGBwDYM3vM5vP9lNXGQmLLvu/XmtmZsRkb4cs9YHF52PqVRTrhsNytMOJzHcEAQen3TTFAJ035rs0fXmtDX0+IcPFMT7MkGR9Fw2sC/wjLe22hFtuo8kGcGbKXM5LbVLcoGVojNfnmBj0m3ks4rAyCxo4A0W3txedvmmmM+qOattau2S7u2iS0xsMuoHQ7qqlWGcuLGx7p02/nxV1GYCVa3CvJjKecG28b9VYK2V1NwaJYQf9xDpv9Fbh8aGDhafa1dOsETbaPmealt+HX9Pj+nf67jAi9F3aIkHJpO+sxra8R9VmxeJD9Ght5+QEaaWnzJSW/g58OEnXPf7VmREWnEREQEREBSFClBP1XdMeqimL31Xbhe2qiocL21VtBo+O6nDgae1uoLZPBruorm4JyX5rVQDMpjTf0TCZYttqsNd4k5bN5c+sKe9L4mpViQ3wqKWHJE2DfeNh9z8FdhaAgvdoNvv9lGQ+K/dzpP83V1MVspibyWcxafstD6FM6EtHM8Q/ZbG91kkjh/usYpRDng92dBNxOkhZ3VzHABgd5OTY9eqsxTWxPorMYGgCbg6c1kZwEZxI5cuoVnfZektbJ4rHZKzY89lqxgbbdx8MKljYdD/ABbeSSmKWC99eS5qC9tVdXF4HiVTfmqjgLkrtwvZcrSOUREQREQEREBdNXK7F7IO9bDXmrKFjB1581zTMGDpzVzWd4Y9kbrNaiCzOYbaNSr8G8eEiCNeq6wz8hyP4QJhxsDdSaBrXIysEwfe632ssWtRhxdUEy0Rt5qcDTaSXO8LRMczsFVVqFxk9APIK9uHJAJEECw57yfVbvUZnrs0i6agEN1y84WgYpuSY/476qW4yGmRD9MvPksj6ZnPHFyWPfWvPAAjjItM5OUrVUxjcotM7LIa/ryVbQW8Qud1c31Nzxpps7uHOGYH/quu0Q2wbcm9rwuPxRIhtyfkrKbTR4mjM0+KdoT7VGEhmWbh8Q7TKQSCDK6xhDnZG3NuLkjpc17Kbc7Ae8Lh7NtvQ+q6A7owL0zBzHaRvCnzp9M7BlOU6+9zVFQZjA23W+o01TAHAPa5nkFnjIcrrC8HmrKljM3kuHK4tzdBt1VbjzW4yqRSVCqCIiAiIgBWtt5KsK1nF5KVYsaC4x7K00Xd2b/p89wVRBZxezuFswlI1Dmd+ns3r1+axWotw+HNcy8flicuxPUqjG1X02mm7Q2abTlB3+EK91V2HN70zOVoN277rzK1UvcXOvOnQbBTjNv0tv7uKNOTfr9LLSys4GHePaNydFlZUyyvoOx+yO8Dy8gvizvdMSCFedk7qcZvjC7AvIzO/V20gRoFndVd4Y/MmI/nRelWrvYTQPFWJAD5EcWk8itJ7DhlyO91z31n7LH8WetZvjwn4VwE+1uqC8mw13Xo1KjnHuRZ4JBdNjC4xHZ8AQRI1PNbl/KZ+GEAjT4rVSquqcDbA+LyPJZJzWFlc0FvE0xF/NWpHpD8ipwDgLZeNTlBvE+f1WbCZqoDT+m2AeZjT9lScT3lRhI4ZAjnJuuW1+6qugWzOBHkSFnLn2u/s3umib/omw3IJ/hVBpmpxO8Hsj7rZgqXenvHEFt4ZrG0/X1WbF/knWWmYb7v9lmXvPlf8MbnFtnabKl7TqVpFKeJ1506LNUMWN11jFVFQpKhaZEREBERBIVxEXHpzVCvpCTfXZSrGjCszuk7eytVX8p2dpmbZP3ELPUABDgeO0DWfgtGCLQTUqGKgBlukDoPJc7+W4y13yMxMudNvcE6X0P91kNl1Xq5nF25OnRcNK3Izali20sQaYysfZ7RJvwTYi3JYFrwLGQS4mNLJyOL2aGB/Lc1r2OBuXSCfPosZxVQN7meCY72/OYzadF57ssw08HM631gbrb3TQzXg535/NYzPW93xdicORTA9kXDrX6yvNe97gAZjY34vupL3RBLu6m37KzE3aASco015WgKyYl7VVcO6JIIjmIU9nsD6jGuOrmiOclVilfjOXlP8su3jIWua64Mi1wQbLSIxdnyNZsPjZVVnkuLjYkkxykyraZLqoza5hPwMn91RUMmdzf1SJXpMqlsVWGajrFkTtrA8h6rRg6IM1C4F7tR7t7iFR/T0ZzPiymPUKzG2ee5kvM5+Xz3lc77jc81irjISG3nXp6KrII1nqtVLLBjX2p5rE//AE6LcYqsqFJULbIiIgIiIJC0Pj/lssy00uE3vO/JSrG3s9oDxn8Z8J2iP8rntt7cwDRxe0foExVcRlAkxr7q88a315rEnetW9YWjquFZUM/dVrcZqQumAmY03C4WjCVACZMW+iUjV2Zj3Ug4htN7SILajA8azod5usffnQ+CZyzZW/hy6XgW5RrCh7RlzSJ0y7j4LMk3W7bmNdaozuwY4Tt1Xn06sEEiQDobj/C5LDE/JS20Ea8lZMS1p7SxIqOzCnTp2Ay02kDzuSfmqaQAgO306IKZFyJH0XdZ4AgXkeiedQvd2qCeI/FcuF1bSMNNrOIGbyvH0XFY3sqyUqhaZaYPML2ezqjILYh48RPtX1leGttBhqgNmA3eLmVnnNi8aVxmJLLAa7SqZEWstjK4ALXANI+E9QsdRpdxRHRItUFQpKhbYEREBERBIWrPPCN9TyWRXzluFKsTU4eEGRMnzXBM+S5mVMR5IE+i5hSPkp08kHCkJCNMKj16HaAyQfHs2DB5LPXYf1D+pPhtAGiqoUbHZ+xnRdurnw+3pOy55306b+UOrju8vtco6qnDki4EnkeS1OwcU5tmM3nUclSHSA1vi3J6bBWYll+V1Z4cIp3960ZVkxDA2ANxJ/ZaKlKBwfHqBdZKz8zieasTksz5mtaNBM+ZP2AXFVkeSl1jbQW9LFCZ8lUVLRgsRkN9FS5sLkJ6nj0jTNTifb3Y+qoqVDo7xfVKOJLRBvOnRH0jEuu7mstMr9brldP1uuVtgREQEREBdOdK5RB2um38uS4C667qKhwhSzqn1XKCXWUQpauUGrvNGgyTo7lOxXT8Mcsi535qinp03Xec5YE5Of8AdRqK+8Jt8/qrG0ZHKN1oLOADKQ33pH1XIBIAqSGeyYiY0ueimmKnV82tvLf+yqDLZuStxUHS37qqq0gCbHbyViVwCuid1wpaVpFlIblc1GwVErphHxUEsaneGI+fJcTyUg+iDhwUKSoVQREQEREBERBIVjeuqrBUkorpxv1XIQFSboOUClQiO2T8N1rphuWfZWag+DPRaKNInjiQDOTms1uLcjg0OdJoTYT6TvErnFVw5onTb0svWr4tncAgAk2yWkHlHReI2kWw4iRy5LHHv1q9eOAwgjNvooxr5d5QFpq1QTYZpsPv81gcIK3GKBSQuZSVplIUFFCCUUIgIiICIiAiIgIiIJUIiAplQiCURAgso0ybjUX9F7nZuKDWxlmuSA2nBuT+0byvLwVSOGJc6A3lJ0lfSYHsYlhMxiWkQ+TA0LY6Zbac1y/Us+XThL8Ov/w6oHfgZsSbupnKGQ6xGuoG87LysdXbEU/H7bSCMhHiHrZeoe1q7v8Ax22xIMOfw5IbckW3HRYsd2aQR3f6sZnuJJzRckzzcufHd/m/7/Td+nn/AIZ1KHNvPi6eS8xxXsHEurWbwgeKYvOw+a8rE08rnDYH5bLtx+3Pl9K1CItsCIiAiIgIiICIiAiIgIiICIiAiIglFC7pi6D2+xcG1wIdFxry/wAK38RUa7uA/hMMNeTYE5hJ2cJI13Xn4Zzg1wZJpGzzEkA+KPgvoMtD8KWtP5UG5nWfuuHLq9u3HuNFXsqmKIaHBpF+9EB07mevmvnxUdVORzso07y/GGiAATrMkoazzSDXyMLMNdAmbxO8C502Xq9qso9y0OP5cDJE+7b5LM3j72vrysdSDYghpbpFp6LzMW8uOYiOn7rS8ukd6D/p/vG6Y/LF/Ft+668emL289QpRdHNCIiAiIgIiICIiAiIgIiICIphBCKYKnKeSDlWUmE6LnIeRWjCGJUqx6eBxDAwwIaNRztdcsaSO8AP4eZNKYkDUxprsvPJzHMbERAgmY5r2aPakU8xbxC2W/wBlyss8dJZfXVLH0blzCaI0ZAPEbaTFro7COpMbVrDPRM5aUl3dZrtkG1hbovLoYpzavfBsuknLlMXsvfx/9QflNLQC92rb8Nr/ADWbxsvUWWX15vbD2QBEl3hiLfZedSGV3HxTEHl6qA8M8JzTrLSI8lFarNhod10kzpm3e2euyHEfyNlWrHt5aLjKV0c0IpypCCEU5VCAiIgIiICIiAiIgKZUIgmUlQiCZSVCIOmOjaV7NDBMLO84IBbqXzDhOgOo9DOogrxF6NNw7rrffzA+RQZn1mTZnDyzO+69IYKnkzwzL5vmImYzaxtpvOy6pYSia7w51MUnvqU2EPbDCc3dvMOkMByyTtKzMjuSTrHPecv0sosefUcCbCB5lcqEVRKKEQSihEEqERAREQEREBERAREQEREBERBp7NqFtVht4mgggEESJF16v9UUWO7nE0mhrK7AHNaAA2tSAZUAA0kZH/8AMryMCPzG3AAc0kkgACRderg+0GtwtahUu5r2VqRBBioDlcBGoLXEn/aFB9P/AE12bSr4WlQc1oH4sirUDW94aVOgX1Gh5EgSPkF84e1nuzvptbTpiS2kGtNMNmwc0gh9tS6Zutn9P9qsw9GmSQS3EFz2BwzGk+k5jiBN9VgpYHhe1jmuZ7NQua1paSYLpPDbUG6RX3LKuBw1OjiKuHY7A49obUpZQ5+GqZXCs6g8jMACabhedQNl57+x3dmYprQWVqLgXUqjmMfTrUnSWuhwIkSJ5EcoXj/1Hj2VsNSoUntNPChjQS5rXVXEP717WEzlnIAIleh/S/bjX4Q4PEyWta+ph3+1SqiYYD7j7Njr5RnKrvC4yewa9RzKRrfi20xU7qnnFNzGuc0OyyBM+pXmYDA0qnZuIpAD8VRNPF5rS6k4FjmeTQ5jvN3RXdihr+yX0nOa1pxjHEudlECkJud9l5PYvbFRmJDnuGRxLKglobkfwuvuADPwCqPBRaMfRax7g1wcyTlIMyNv4VnWkEREBERAREQEREBERAREQEREBFIaoQEREBexQ/SyCJNr68TTb1PyVXYnZ5qkw4NIdTbds/qPyzfla2vzje3snwzUAc7vIaaVyKYe4mM0ex/2HWJo+eIX0HZ2em1rqbstZrhkgw4HLmEdc2y7pdmPdlf3mpAk0hwh1OlUzOM7Cprfwq1nYtQzLmhwdSBHdg3qlsxxQS0uN+hTVeFiu0aj2lhIDS81C0CAXu8Tj16aDYBY17HbfZ72AVHvzEuc2csaFwBzbzE/uV46qCIiAiIgIpUICIiAiIgIiICvZiiGFkCCZmL7fZUIg7z9B6KC6dh6LlEFvfHYAfDXzXL6hP8AiFwiDpzpXKIglpgytp7QH/rZzsOhH7z5rCiDYccI/Tp7bcnZvQyRHJdN7RgR3bDYiSL36rCiDuq/M4mAJMwNAuERAREQW065bEAW6IaxiIHoFUiC/wDFOgC1hGk/Vc1K5Ii3wCqRAREQEREH/9k=" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>Un sacerdote es asesinado. Un mal se está extendiendo. La secuela del gran éxito mundial sigue a la Hermana Irene cuando una vez más se encuentra cara a cara con Valak, la monja demonio.</p>
+  </mat-card-content>
+  
+</mat-card> <br>
+</div>
+
+
+<!---Carteleras de cine 1-->
+<div class="cartelera">
+<mat-card class="example-card1">
+  <mat-card-header>
+    <div mat-card-avatar class=""example-header-image1></div>
+    <mat-card-title class="monja"> Estreno</mat-card-title>
+    <mat-card-subtitle>Saw X: El Juego del Miedo</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://s3-eu-west-1.amazonaws.com/abandomedia/db/poster/db_posters_57241.jpg" alt="Sax II">
+  <mat-card-content>
+    <p>Toma lugar entre los eventos ocurridos de SAW I (El juego del miedo) y SAW II (El juego del miedo 2), un enfermo y desesperado John viaja a México para encontrarse con su peor pesadilla.</p>
+  </mat-card-content>
+</mat-card>
+</div>
+<br>
+
+<!-- los resultados -->
+    <div *ngIf="calcular()" class="diseño">
+      <mat-card class="container">
+    
+      <h3 class="compra">¡Felicidades has comprado!</h3>
+      <p>Nombre: {{ nombre }}</p>
+      <p>Numero de compradores {{cantComp}}</p>
+      <p>Total de Boletas: {{ numBol}}</p>
+      <p>Total a Pagar: ${{ total}}</p>  
+      <p></p>
+    </mat-card>
+    </div>
+ 
+  </div>
+
+</body>
+</html>
